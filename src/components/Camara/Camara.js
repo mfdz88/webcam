@@ -19,10 +19,12 @@ export default class Camara extends Component {
          };
 
     render() {
+        const videoConstraints = {
+            facingMode: { exact: "environment" }};
 
         return (
             <div className='App'>
-                <Webcam audio={false} height={350} ref={this.setRef} screenshotFormat="image/jpeg" width={350}/>
+                <Webcam videoConstraints={videoConstraints} audio={false} height={350} ref={this.setRef} screenshotFormat="image/jpeg" width={350}/>
                  <br/> 
                 <button onClick={this.foto}>Hacer captura</button>
                 <hr/>
